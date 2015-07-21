@@ -1,0 +1,6 @@
+### THIS FILE IS MANAGED BY PUPPET. ANY MANUAL CHANGES WILL GET OVERWRITTEN.
+
+check process ovirt-guest-agent with pidfile <%= scope['::ovirt::params::guest_pidfile'] %>
+   start program = "<%= scope['::ovirt::params::guest_service_start'] %>"
+   stop  program = "<%= scope['::ovirt::params::guest_service_stop'] %>"
+   alert <%= scope['::ovirt::guest::monit::monitor_email'] %> with reminder on 480 cycles

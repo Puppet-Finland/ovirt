@@ -1,0 +1,15 @@
+{
+  "name": "puppetfinland-ovirt",
+  "version": "0.1.0",
+  "author": "Puppet-Finland team",
+  "license": "BSD license",
+  "summary": "Setup things related to oVirt",
+  "source": "https://github.com/Puppet-Finland/ovirt.git",
+  "project_page": "https://github.com/Puppet-Finland/ovirt",
+  "dependencies": [
+    { "name": "puppetfinland/monit", "version_requirement": ">= 0.5.1" },
+    { "name": "puppetfinland/os", "version_requirement": ">= 0.5.8" },
+    { "name": "puppetfinland/systemd", "version_requirement": ">= 0.1.0" },
+    { "name": "puppetlabs/apt", "version_requirement": ">= 2.0.1" }
+  ]
+}
