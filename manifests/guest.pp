@@ -16,13 +16,17 @@
 class ovirt::guest
 (
     $ensure = present,
+    $ensure_aptrepo = absent,
     $manage = true,
     $monitor_email = $::servermonitor
 )
 {
 
     if $manage {
-        class { '::ovirt::guest::prequisites': ensure => $ensure, }
+        class { '::ovirt::guest::prequisites':
+            ensure         => $ensure,
+            ensure_aptrepo => $ensure_aptrepo,
+        }
         class { '::ovirt::guest::install':     ensure => $ensure, }
         class { '::ovirt::guest::service':     ensure => $ensure, }
 

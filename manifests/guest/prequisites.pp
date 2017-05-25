@@ -8,7 +8,8 @@
 #
 class ovirt::guest::prequisites
 (
-    $ensure
+    $ensure,
+    $ensure_aptrepo
 
 ) inherits ovirt::params {
 
@@ -17,7 +18,7 @@ class ovirt::guest::prequisites
         include ::apt
 
         apt::source { 'ovirt-guest-prequisites':
-            ensure   => $ensure,
+            ensure   => $ensure_aptrepo,
             location => $::ovirt::params::guest_apt_repo_location,
             release  => $::ovirt::params::guest_apt_repo_release,
             repos    => $::ovirt::params::guest_apt_repo_repos,
